@@ -18,8 +18,7 @@ class BaseConfig:
 
     # SERVER_NAME = 'todoism.dev:5000'  # enable subdomain support
     SECRET_KEY = os.getenv('SECRET_KEY', 'a secret string')
-
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'sqlite:///' + os.path.join(basedir, 'data.db'))
+    SQLALCHEMY_DATABASE_URI = 'sqlite://///home/extend/DB/todo.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
