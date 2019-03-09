@@ -76,6 +76,7 @@ class ItemAPI(MethodView):
         return jsonify(item_schema(item))
 
     def put(self, item_id):
+        # 比较正确的定义是Create or Update
         """Edit item."""
         item = Item.query.get_or_404(item_id)
         if g.current_user != item.author:
@@ -85,6 +86,7 @@ class ItemAPI(MethodView):
         return '', 204
 
     def patch(self, item_id):
+        # 是对PUT方法的补充，用来对已知资源进行局部更新
         """Toggle item."""
         item = Item.query.get_or_404(item_id)
         if g.current_user != item.author:
